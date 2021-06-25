@@ -58,6 +58,11 @@ Route::apiResource('sponsor',SponsorsController::class);
 Route::apiResource('sponsorEvents',SponsorsEventsController::class);
 
 Route::apiResource('album',AlbumController::class);
+Route::get('/artisan/storage', function() {
+    $command = 'storage:link';
+    $result = Artisan::call($command);
+    return Artisan::output();
+})
 
 
 
